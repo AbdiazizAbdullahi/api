@@ -6,15 +6,20 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Backend
+module Api
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    config.active_record.sqlite3_production_warning=false
-
     # Configuration for the application, engines, and railties goes here.
-    #
+    # Configuration for the application, engines, and railties goes here.
+    # Adding back cookies and session middleware
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+
+    # Use SameSite=Strict for all cookies to help protect against CSRF
+    config.action_dispatch.cookies_same_site_protection = :strict
+    
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #

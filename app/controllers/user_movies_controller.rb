@@ -18,7 +18,7 @@ class UserMoviesController < ApplicationController
     user_movie = UserMovie.create(user_movie_params)
 
     if user_movie.valid?
-      render json: user_movie, status: :created, location: user_movie
+      render json: user_movie, status: :created
     else
       render json: user_movie.errors, status: :unprocessable_entity
     end

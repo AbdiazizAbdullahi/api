@@ -33,10 +33,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_29_002911) do
 
   create_table "user_movies", force: :cascade do |t|
     t.string "genre"
-    t.integer "user_id"
-    t.integer "movie_id"
+    t.integer "user_id", null: false
+    t.integer "movie_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_user_movies_on_movie_id"
+    t.index ["user_id"], name: "index_user_movies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,4 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_29_002911) do
 
   add_foreign_key "reviews", "movies"
   add_foreign_key "reviews", "users"
+  add_foreign_key "user_movies", "movies"
+  add_foreign_key "user_movies", "users"
 end
