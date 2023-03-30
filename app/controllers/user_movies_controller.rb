@@ -1,5 +1,5 @@
 class UserMoviesController < ApplicationController
-  before_action :set_user_movie, only: %i[ show update destroy ]
+  before_action :set_user_movie, only: %i[ show update ]
 
   # GET /user_movies
   def index
