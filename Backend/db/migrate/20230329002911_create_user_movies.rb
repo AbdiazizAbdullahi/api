@@ -1,0 +1,11 @@
+class CreateUserMovies < ActiveRecord::Migration[7.0]
+  def change
+    create_table :user_movies do |t|
+      t.string :genre
+      t.integer :user_id
+      t.integer :movie_id
+
+      t.timestamps
+    end
+  end
+end
