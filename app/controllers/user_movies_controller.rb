@@ -10,7 +10,9 @@ class UserMoviesController < ApplicationController
 
   # GET /user_movies/1
   def show
-    render json: user_movie
+    votes = UserMovie.find(params[:id])
+
+    render json: votes
   end
 
   # POST /user_movies

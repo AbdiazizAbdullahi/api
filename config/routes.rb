@@ -28,6 +28,10 @@ delete 'logout', to: 'sessions#destroy'
 # Post route for creating a user's vote 
 post 'votes/create', to: 'user_movies#create'
 
+get 'votes', to: 'user_movies#index'
+
+get 'votes/:id', to: 'user_movies#show'
+
 
 # resources :movies, only: [:index, :show]
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
