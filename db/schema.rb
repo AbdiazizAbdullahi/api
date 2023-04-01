@@ -16,6 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_29_002911) do
     t.string "title"
     t.integer "year"
     t.string "director"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

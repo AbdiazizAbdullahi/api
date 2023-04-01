@@ -14,11 +14,12 @@ puts "Seeding..."
 
 # Generate fake movie data
 10.times do
-  Movie.create( 
+  movie = Movie.create(
     image: Faker::LoremFlickr.image(size: "300x300", search_terms: ['movie']),
     title: Faker::Movie.title,
-    year: Faker::Number.between(from: 2000, to: 2023),
-    director: Faker::Name.name
+    year: Faker::Number.between(from: 2022, to: 2023),
+    director: Faker::Name.name,
+    category: Faker::Book.genre
   )
 end
 

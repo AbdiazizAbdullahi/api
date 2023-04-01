@@ -586,3 +586,299 @@ Processing by UserMoviesController#show as */*
 Completed 200 OK in 159ms (Views: 143.9ms | ActiveRecord: 3.3ms | Allocations: 49085)
 
 
+Started GET "/movies" for 127.0.0.1 at 2023-03-31 07:59:12 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+  Parameters: {"username"=>"Abdi", "password"=>"[FILTERED]", "movie"=>{}}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.3ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.1ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 2]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 2]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.1ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 3]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 3]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 4]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 4]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 5]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.1ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 5]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 5]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 6]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 6]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 6]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.5ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 7]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 7]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 8]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 8]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 8]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 9]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.3ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 9]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 9]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 10]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 10]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (340.65ms)
+Completed 200 OK in 419ms (Views: 363.7ms | ActiveRecord: 34.9ms | Allocations: 134675)
+
+
+Started POST "/logout" for 127.0.0.1 at 2023-03-31 08:02:06 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/logout"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-31 08:02:15 +0300
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"Abdi", "password"=>"[FILTERED]", "session"=>{"username"=>"Abdi", "password"=>"[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 655)
+
+
+Started DELETE "/movies" for 127.0.0.1 at 2023-03-31 08:02:25 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/movies"):
+  
+Started GET "/movies" for 127.0.0.1 at 2023-03-31 08:02:36 +0300
+Processing by MoviesController#index as */*
+  Parameters: {"username"=>"Abdi", "password"=>"[FILTERED]", "movie"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 335)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20230328083201)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "title" varchar, "year" integer, "director" varchar, "category" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328083201"]]
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20230328083215)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comment" text, "user_id" integer NOT NULL, "movie_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_6ad75a4852"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_movie_id" ON "reviews" ("movie_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328083215"]]
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20230328222140)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "year_born" integer, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328222140"]]
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserMovies (20230329002911)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "user_movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "genre" varchar, "user_id" integer NOT NULL, "movie_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e6836e33a5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_af7366483f"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_user_movies_on_user_id" ON "user_movies" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_user_movies_on_movie_id" ON "user_movies" ("movie_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230329002911"]]
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-01 04:49:29.371996"], ["updated_at", "2023-04-01 04:49:29.371996"]]
+  [1m[36mTRANSACTION (16.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tristan.kirlin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alesha.hessel@kuphal-hilpert.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "tristan.kirlin"], ["email", "alesha.hessel@kuphal-hilpert.com"], ["year_born", 1972], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 04:55:24.646837"], ["updated_at", "2023-04-01 04:55:24.646837"]]
+  [1m[36mTRANSACTION (31.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "susannah"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stephen@cruickshank.name"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "susannah"], ["email", "stephen@cruickshank.name"], ["year_born", 1960], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 04:55:24.700376"], ["updated_at", "2023-04-01 04:55:24.700376"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "alyce.kautzer"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "syreeta@bechtelar.info"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "alyce.kautzer"], ["email", "syreeta@bechtelar.info"], ["year_born", 1962], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 04:55:24.723314"], ["updated_at", "2023-04-01 04:55:24.723314"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jc"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "annette@wehner.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "jc"], ["email", "annette@wehner.net"], ["year_born", 1984], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 04:55:24.746137"], ["updated_at", "2023-04-01 04:55:24.746137"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "norah.ryan"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tempie@bahringer.info"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "norah.ryan"], ["email", "tempie@bahringer.info"], ["year_born", 1959], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 04:55:24.768544"], ["updated_at", "2023-04-01 04:55:24.768544"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mohamed.hand"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gaston@dare.biz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "mohamed.hand"], ["email", "gaston@dare.biz"], ["year_born", 1970], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 04:55:24.791744"], ["updated_at", "2023-04-01 04:55:24.791744"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "bulah"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jayson@sipes.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "bulah"], ["email", "jayson@sipes.org"], ["year_born", 1973], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 04:55:24.813943"], ["updated_at", "2023-04-01 04:55:24.813943"]]
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "alec_yundt"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "oren_barrows@balistreri.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "alec_yundt"], ["email", "oren_barrows@balistreri.com"], ["year_born", 1994], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 04:55:24.837086"], ["updated_at", "2023-04-01 04:55:24.837086"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sid_harris"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "yon_batz@schroeder-abbott.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "sid_harris"], ["email", "yon_batz@schroeder-abbott.net"], ["year_born", 1994], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 04:55:24.869951"], ["updated_at", "2023-04-01 04:55:24.869951"]]
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "rachael"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vernell@mosciski.io"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "rachael"], ["email", "vernell@mosciski.io"], ["year_born", 1972], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 04:55:24.894605"], ["updated_at", "2023-04-01 04:55:24.894605"]]
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("image", "title", "year", "director", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://loremflickr.com/300/300/movie"], ["title", "Rush"], ["year", 2022], ["director", "Angelo Nienow Sr."], ["category", "Historical fiction"], ["created_at", "2023-04-01 04:55:24.929560"], ["updated_at", "2023-04-01 04:55:24.929560"]]
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("image", "title", "year", "director", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://loremflickr.com/300/300/movie"], ["title", "Unforgiven"], ["year", 2023], ["director", "Nicky Grady"], ["category", "Mythopoeia"], ["created_at", "2023-04-01 04:55:24.947632"], ["updated_at", "2023-04-01 04:55:24.947632"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("image", "title", "year", "director", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://loremflickr.com/300/300/movie"], ["title", "All About Eve"], ["year", 2022], ["director", "King Nikolaus"], ["category", "Reference book"], ["created_at", "2023-04-01 04:55:24.964879"], ["updated_at", "2023-04-01 04:55:24.964879"]]
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("image", "title", "year", "director", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://loremflickr.com/300/300/movie"], ["title", "Stand by Me"], ["year", 2023], ["director", "Tressie Donnelly VM"], ["category", "Narrative nonfiction"], ["created_at", "2023-04-01 04:55:24.983096"], ["updated_at", "2023-04-01 04:55:24.983096"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("image", "title", "year", "director", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://loremflickr.com/300/300/movie"], ["title", "Star Wars: Episode VIII – The Last Jedi"], ["year", 2023], ["director", "Tiesha Zieme"], ["category", "Realistic fiction"], ["created_at", "2023-04-01 04:55:25.000860"], ["updated_at", "2023-04-01 04:55:25.000860"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("image", "title", "year", "director", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://loremflickr.com/300/300/movie"], ["title", "Jurassic Park"], ["year", 2023], ["director", "Kia McClure I"], ["category", "Legend"], ["created_at", "2023-04-01 04:55:25.018805"], ["updated_at", "2023-04-01 04:55:25.018805"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("image", "title", "year", "director", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://loremflickr.com/300/300/movie"], ["title", "Paper Moon"], ["year", 2023], ["director", "Austin Walter"], ["category", "Legend"], ["created_at", "2023-04-01 04:55:25.036106"], ["updated_at", "2023-04-01 04:55:25.036106"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("image", "title", "year", "director", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://loremflickr.com/300/300/movie"], ["title", "Persona"], ["year", 2022], ["director", "America Wuckert"], ["category", "Comic/Graphic Novel"], ["created_at", "2023-04-01 04:55:25.054469"], ["updated_at", "2023-04-01 04:55:25.054469"]]
+  [1m[36mTRANSACTION (14.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("image", "title", "year", "director", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://loremflickr.com/300/300/movie"], ["title", "Persona"], ["year", 2022], ["director", "Natalia Schuppe"], ["category", "Crime/Detective"], ["created_at", "2023-04-01 04:55:25.076351"], ["updated_at", "2023-04-01 04:55:25.076351"]]
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("image", "title", "year", "director", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://loremflickr.com/300/300/movie"], ["title", "The Best Years of Our Lives"], ["year", 2022], ["director", "Gillian Emmerich IV"], ["category", "Fiction in verse"], ["created_at", "2023-04-01 04:55:25.095123"], ["updated_at", "2023-04-01 04:55:25.095123"]]
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "At aliquam quia tempora quibusdam enim totam aut distinctio nisi."], ["user_id", 6], ["movie_id", 9], ["created_at", "2023-04-01 04:55:25.166582"], ["updated_at", "2023-04-01 04:55:25.166582"]]
+  [1m[36mTRANSACTION (17.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Create (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 1], ["comment", "Dolor reprehenderit expedita rem quia voluptatem omnis nihil sunt eius."], ["user_id", 9], ["movie_id", 3], ["created_at", "2023-04-01 04:55:25.213175"], ["updated_at", "2023-04-01 04:55:25.213175"]]
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "Voluptatem et alias omnis asperiores qui dolore aut quisquam culpa."], ["user_id", 8], ["movie_id", 10], ["created_at", "2023-04-01 04:55:25.239921"], ["updated_at", "2023-04-01 04:55:25.239921"]]
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 2], ["comment", "Sint minima rerum perspiciatis dolores error non soluta corporis velit."], ["user_id", 3], ["movie_id", 1], ["created_at", "2023-04-01 04:55:25.262922"], ["updated_at", "2023-04-01 04:55:25.262922"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "Molestiae non commodi enim porro beatae nostrum maiores magni amet."], ["user_id", 1], ["movie_id", 10], ["created_at", "2023-04-01 04:55:25.286043"], ["updated_at", "2023-04-01 04:55:25.286043"]]
+  [1m[36mTRANSACTION (11.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 4], ["comment", "Aut ut blanditiis accusantium iure maxime commodi veritatis aut qui."], ["user_id", 5], ["movie_id", 6], ["created_at", "2023-04-01 04:55:25.310553"], ["updated_at", "2023-04-01 04:55:25.310553"]]
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "Et qui aliquam similique minus sapiente quas cumque provident in."], ["user_id", 10], ["movie_id", 6], ["created_at", "2023-04-01 04:55:25.332704"], ["updated_at", "2023-04-01 04:55:25.332704"]]
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 3], ["comment", "Asperiores necessitatibus quasi iste et earum consequatur repudiandae sequi modi."], ["user_id", 2], ["movie_id", 2], ["created_at", "2023-04-01 04:55:25.356699"], ["updated_at", "2023-04-01 04:55:25.356699"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 1], ["comment", "Et voluptatum aspernatur vel ut cumque non ducimus nisi et."], ["user_id", 7], ["movie_id", 10], ["created_at", "2023-04-01 04:55:25.380184"], ["updated_at", "2023-04-01 04:55:25.380184"]]
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 3], ["comment", "Et illo rerum expedita consequatur quia laborum eum fuga omnis."], ["user_id", 4], ["movie_id", 9], ["created_at", "2023-04-01 04:55:25.404234"], ["updated_at", "2023-04-01 04:55:25.404234"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUserMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "user_movies" ("genre", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["genre", "Short story"], ["user_id", 10], ["movie_id", 3], ["created_at", "2023-04-01 04:55:25.447163"], ["updated_at", "2023-04-01 04:55:25.447163"]]
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUserMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "user_movies" ("genre", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["genre", "Biography/Autobiography"], ["user_id", 5], ["movie_id", 3], ["created_at", "2023-04-01 04:55:25.470217"], ["updated_at", "2023-04-01 04:55:25.470217"]]
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUserMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "user_movies" ("genre", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["genre", "Essay"], ["user_id", 3], ["movie_id", 10], ["created_at", "2023-04-01 04:55:25.493664"], ["updated_at", "2023-04-01 04:55:25.493664"]]
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUserMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "user_movies" ("genre", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["genre", "Metafiction"], ["user_id", 5], ["movie_id", 9], ["created_at", "2023-04-01 04:55:25.516618"], ["updated_at", "2023-04-01 04:55:25.516618"]]
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUserMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "user_movies" ("genre", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["genre", "Crime/Detective"], ["user_id", 2], ["movie_id", 10], ["created_at", "2023-04-01 04:55:25.539833"], ["updated_at", "2023-04-01 04:55:25.539833"]]
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
