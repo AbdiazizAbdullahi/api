@@ -20,7 +20,7 @@ get '/movies/:id', to: 'movies#show'
 post '/create', to: 'users#create'
 
 # get route for viewing a specific user
-get 'show/:id', to: 'users#show'
+get 'show', to: 'users#show'
 
 # Post route for login endpoint
 post 'login', to: 'sessions#login'
