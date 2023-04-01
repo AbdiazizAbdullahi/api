@@ -882,3 +882,271 @@ FOREIGN KEY ("movie_id")
   [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
   [1m[36mUserMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "user_movies" ("genre", "user_id", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["genre", "Crime/Detective"], ["user_id", 2], ["movie_id", 10], ["created_at", "2023-04-01 04:55:25.539833"], ["updated_at", "2023-04-01 04:55:25.539833"]]
   [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/ws" for ::1 at 2023-04-01 08:01:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/movies" for 127.0.0.1 at 2023-04-01 08:01:49 +0300
+Processing by MoviesController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 754)
+
+
+Started GET "/ws" for ::1 at 2023-04-01 08:02:13 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-01 08:03:18 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-01 08:05:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started POST "/create" for 127.0.0.1 at 2023-04-01 08:07:14 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Flata", "email"=>"flata@gmail.com", "year_born"=>"2001", "password"=>"[FILTERED]", "user"=>{"username"=>"Flata", "email"=>"flata@gmail.com", "year_born"=>"2001"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f04c8c8c430>, params: {"username"=>"Flata", "email"=>"flata@gmail.com", "year_born"=>"2001", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"Flata", "email"=>"flata@gmail.com", "year_born"=>"2001"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "flata@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "year_born", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Flata"], ["email", "flata@gmail.com"], ["year_born", 2001], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 05:07:15.273860"], ["updated_at", "2023-04-01 05:07:15.273860"]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Flata"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "flata@gmail.com"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16:in `create'
+[active_model_serializers]   [1m[36mUserMovie Load (2.0ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16:in `create'
+[active_model_serializers]   [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "user_movies" ON "movies"."id" = "user_movies"."movie_id" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (101.16ms)
+Completed 201 Created in 500ms (Views: 131.2ms | ActiveRecord: 18.5ms | Allocations: 44217)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-01 08:08:10 +0300
+Processing by SessionsController#login as */*
+  Parameters: {"username"=>"Flata", "password"=>"[FILTERED]", "session"=>{"username"=>"Flata", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Flata"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `login'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:10:in `login'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:10:in `login'
+[active_model_serializers]   [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "user_movies" ON "movies"."id" = "user_movies"."movie_id" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:10:in `login'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (14.14ms)
+Completed 200 OK in 316ms (Views: 14.3ms | ActiveRecord: 0.7ms | Allocations: 3939)
+
+
+Started GET "/ws" for ::1 at 2023-04-01 08:09:44 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/movies" for 127.0.0.1 at 2023-04-01 08:09:49 +0300
+Processing by MoviesController#index as */*
+  Parameters: {"username"=>"Flata", "password"=>"[FILTERED]", "movie"=>{}}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.3ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 1]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.1ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 2]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 2]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 3]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 3]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 4]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 4]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 5]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 5]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 5]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 6]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 6]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 6]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 7]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 7]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 8]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 8]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 8]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 9]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 9]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 9]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 10]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_movies" ON "users"."id" = "user_movies"."user_id" WHERE "user_movies"."movie_id" = ?[0m  [["movie_id", 10]]
+[active_model_serializers]   ↳ app/controllers/movies_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (192.2ms)
+Completed 200 OK in 219ms (Views: 209.2ms | ActiveRecord: 8.3ms | Allocations: 81106)
+
+
+Started GET "/user/3" for 127.0.0.1 at 2023-04-01 08:10:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/user/3"):
+  
+Started GET "/user/3" for 127.0.0.1 at 2023-04-01 08:13:41 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/user/3"):
+  
+Started GET "/show/3" for 127.0.0.1 at 2023-04-01 08:14:40 +0300
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"Flata", "password"=>"[FILTERED]", "id"=>"3", "user"=>{"username"=>"Flata"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `show'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "user_movies" ON "movies"."id" = "user_movies"."movie_id" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (44.14ms)
+Completed 200 OK in 57ms (Views: 44.9ms | ActiveRecord: 3.6ms | Allocations: 16874)
+
+
+Started GET "/show/3" for 127.0.0.1 at 2023-04-01 08:16:31 +0300
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"Flata", "password"=>"[FILTERED]", "id"=>"3", "user"=>{"username"=>"Flata"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mUserMovie Load (0.4ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "user_movies" ON "movies"."id" = "user_movies"."movie_id" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (59.64ms)
+Completed 200 OK in 70ms (Views: 56.7ms | ActiveRecord: 6.8ms | Allocations: 22818)
+
+
+Started GET "/show/3" for 127.0.0.1 at 2023-04-01 08:17:16 +0300
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"Flata", "password"=>"[FILTERED]", "id"=>"3", "user"=>{"username"=>"Flata"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `set_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mUserMovie Load (0.2ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (38.01ms)
+Completed 200 OK in 51ms (Views: 37.6ms | ActiveRecord: 5.2ms | Allocations: 15141)
+
+
+Started GET "/show/3" for 127.0.0.1 at 2023-04-01 08:17:54 +0300
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"Flata", "password"=>"[FILTERED]", "id"=>"3", "user"=>{"username"=>"Flata"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mUserMovie Load (0.3ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "user_movies" ON "movies"."id" = "user_movies"."movie_id" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (68.75ms)
+Completed 200 OK in 80ms (Views: 67.5ms | ActiveRecord: 6.6ms | Allocations: 22875)
+
+
+Started GET "/ws" for ::1 at 2023-04-01 08:18:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/show/3" for 127.0.0.1 at 2023-04-01 08:18:24 +0300
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"Flata", "password"=>"[FILTERED]", "id"=>"3", "user"=>{"username"=>"Flata"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `set_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mUserMovie Load (0.3ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "user_movies" ON "movies"."id" = "user_movies"."movie_id" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (20.11ms)
+Completed 200 OK in 28ms (Views: 20.2ms | ActiveRecord: 1.6ms | Allocations: 4482)
+
+
+Started GET "/show/10" for 127.0.0.1 at 2023-04-01 08:18:31 +0300
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"Flata", "password"=>"[FILTERED]", "id"=>"10", "user"=>{"username"=>"Flata"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mUserMovie Load (0.6ms)[0m  [1m[34mSELECT "user_movies".* FROM "user_movies" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "user_movies" ON "movies"."id" = "user_movies"."movie_id" WHERE "user_movies"."user_id" = ?[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (18.13ms)
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 1.2ms | Allocations: 4486)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-01 09:00:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/show"):
+  
+Started GET "/show" for 127.0.0.1 at 2023-04-01 09:00:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/show"):
+  
+Started OPTIONS "/login" for 127.0.0.1 at 2023-04-01 09:16:50 +0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/login"):
+  
+Started OPTIONS "/login" for 127.0.0.1 at 2023-04-01 09:17:45 +0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/login"):
+  

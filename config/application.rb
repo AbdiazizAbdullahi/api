@@ -19,6 +19,14 @@ module Api
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
     config.action_dispatch.cookies_same_site_protection = :strict
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :options]
+      end
+    end
+    
     
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.

@@ -17,7 +17,10 @@ get '/movies', to: 'movies#index'
 get '/movies/:id', to: 'movies#show'
 
 # Post route for creating a new user
-post 'users/create', to: 'users#create'
+post '/create', to: 'users#create'
+
+# get route for viewing a specific user
+get 'show/:id', to: 'users#show'
 
 # Post route for login endpoint
 post 'login', to: 'sessions#login'

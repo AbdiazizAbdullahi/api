@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     current_user = User.find(session[:user_id])
+    # current_user = User.find(params[:id])
+
     render json: current_user, status: :ok
   end
 
